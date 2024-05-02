@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+    xmlns:dc="http://purl.org/dc/elements/1.1/"
+    xmlns:dcmitype="http://purl.org/dc/dcmitype/"
+    xmlns:dcterms="http://purl.org/dc/terms/"
+    xmlns:cdwalite="http://www.getty.edu/CDWA/CDWALite"
+    xmlns:provone="http://purl.dataone.org/provone/2015/01/15/ontology#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    targetNamespace="http://purl.org/vo/elements"
+    xmlns="http://purl.org/vo/elements"
+    elementFormDefault="qualified"> 
+    
+    <xs:import namespace="http://purl.org/dc/terms/"
+        schemaLocation="https://www.dublincore.org/schemas/xmls/qdc/2008/02/11/dcterms.xsd"/>
+    
+    <xs:element name="exercise_movements_metadata">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="name" minOccurs="1" maxOccurs="unbounded"  type="xs:string"/>
+                <xs:element ref="dcterms:description" minOccurs="1" maxOccurs="unbounded"/>  
+
+                <xs:element name="arms" minOccurs="0" maxOccurs="unbounded">
+                    <xs:complexType>
+                        <xs:attribute name="arms">
+                            <xs:simpleType>
+                                <xs:restriction base="xs:string">
+                                    <xs:enumeration value="engaged"/>
+                                    <xs:enumeration value="not engaged"/>
+                                </xs:restriction>
+                            </xs:simpleType>
+                        </xs:attribute>
+                    </xs:complexType>
+                </xs:element>
+                
+                <xs:element name="shoulders" minOccurs="0" maxOccurs="unbounded">
+                    <xs:complexType>
+                        <xs:attribute name="shoulders">
+                            <xs:simpleType>
+                                <xs:restriction base="xs:string">
+                                    <xs:enumeration value="engaged"/>
+                                    <xs:enumeration value="not engaged"/>
+                                </xs:restriction>
+                            </xs:simpleType>
+                        </xs:attribute>
+                    </xs:complexType>
+                </xs:element>
+                
+                <xs:element name="back" minOccurs="0" maxOccurs="unbounded">
+                    <xs:complexType>
+                        <xs:attribute name="back">
+                            <xs:simpleType>
+                                <xs:restriction base="xs:string">
+                                    <xs:enumeration value="engaged"/>
+                                    <xs:enumeration value="not engaged"/>
+                                </xs:restriction>
+                            </xs:simpleType>
+                        </xs:attribute>
+                    </xs:complexType>
+                </xs:element>
+                
+                <xs:element name="abdominals" minOccurs="0" maxOccurs="unbounded">
+                    <xs:complexType>
+                        <xs:attribute name="abdominals">
+                            <xs:simpleType>
+                                <xs:restriction base="xs:string">
+                                    <xs:enumeration value="engaged"/>
+                                    <xs:enumeration value="not engaged"/>
+                                </xs:restriction>
+                            </xs:simpleType>
+                        </xs:attribute>
+                    </xs:complexType>
+                </xs:element>
+                
+                <xs:element name="glutes" minOccurs="0" maxOccurs="unbounded">
+                    <xs:complexType>
+                        <xs:attribute name="glutes">
+                            <xs:simpleType>
+                                <xs:restriction base="xs:string">
+                                    <xs:enumeration value="engaged"/>
+                                    <xs:enumeration value="not engaged"/>
+                                </xs:restriction>
+                            </xs:simpleType>
+                        </xs:attribute>
+                    </xs:complexType>
+                </xs:element> 
+                
+                <xs:element name="legs" minOccurs="0" maxOccurs="unbounded">
+                    <xs:complexType>
+                        <xs:attribute name="legs">
+                            <xs:simpleType>
+                                <xs:restriction base="xs:string">
+                                    <xs:enumeration value="engaged"/>
+                                    <xs:enumeration value="not engaged"/>
+                                </xs:restriction>
+                            </xs:simpleType>
+                        </xs:attribute>
+                    </xs:complexType>
+                </xs:element> 
+               
+                <xs:element name="dumbbells" minOccurs="0" maxOccurs="unbounded">
+                    <xs:complexType>
+                        <xs:attribute name="dumbbells">
+                            <xs:simpleType>
+                                <xs:restriction base="xs:string">
+                                    <xs:enumeration value="required"/>
+                                    <xs:enumeration value="not required"/>
+                                </xs:restriction>
+                            </xs:simpleType>
+                        </xs:attribute>
+                    </xs:complexType>
+                </xs:element> 
+                
+                <xs:element name="kettlebell" minOccurs="0" maxOccurs="unbounded">
+                    <xs:complexType>
+                        <xs:attribute name="kettlebell">
+                            <xs:simpleType>
+                                <xs:restriction base="xs:string">
+                                    <xs:enumeration value="required"/>
+                                    <xs:enumeration value="not required"/>
+                                </xs:restriction>
+                            </xs:simpleType>
+                        </xs:attribute>
+                    </xs:complexType>
+                </xs:element> 
+                
+                <xs:element name="exerciseMat" minOccurs="0" maxOccurs="unbounded">
+                    <xs:complexType>
+                        <xs:attribute name="exercise_mat">
+                            <xs:simpleType>
+                                <xs:restriction base="xs:string">
+                                    <xs:enumeration value="required"/>
+                                    <xs:enumeration value="not required"/>
+                                </xs:restriction>
+                            </xs:simpleType>
+                        </xs:attribute>
+                    </xs:complexType>
+                </xs:element> 
+                
+                <xs:element name="muscleGroup" minOccurs="1" maxOccurs="unbounded">
+                    <xs:complexType>
+                        <xs:attribute name="muscle_group">
+                            <xs:simpleType>
+                                <xs:restriction base="xs:string">
+                                    <xs:enumeration value="biceps"/>
+                                    <xs:enumeration value="triceps"/>
+                                    <xs:enumeration value="calfs"/>
+                                    <xs:enumeration value="hamstrings"/>
+                                    <xs:enumeration value="quads"/>
+                                    <xs:enumeration value="shoulders"/>
+                                    <xs:enumeration value="back"/>
+                                    <xs:enumeration value="abdominals"/>
+                                    <xs:enumeration value="glutes"/>
+                                    <xs:enumeration value="fullBody"/>
+                                </xs:restriction>
+                            </xs:simpleType>
+                        </xs:attribute>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="equipment" minOccurs="0" maxOccurs="unbounded">
+                    <xs:complexType>
+                        <xs:attribute name="equipment">
+                            <xs:simpleType>
+                                <xs:restriction base="xs:string">
+                                    <xs:enumeration value="required"/>
+                                    <xs:enumeration value="not required"/>
+                                </xs:restriction>
+                            </xs:simpleType>
+                        </xs:attribute>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="exerciseType" minOccurs="0" maxOccurs="unbounded">
+                    <xs:complexType>
+                        <xs:attribute name="exerciseType">
+                            <xs:simpleType>
+                                <xs:restriction base="xs:string">
+                                    <xs:enumeration value="cardio"/>
+                                    <xs:enumeration value="strength"/>
+                                    <xs:enumeration value="body weight"/>
+                                </xs:restriction>
+                            </xs:simpleType>
+                        </xs:attribute>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element ref="dcterms:audience" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>
